@@ -1,11 +1,12 @@
 public class Columna {
 
+    private final int NUMERO_MAXIMO_DE_CARTAS = 52;
     private int numeroCartas;
     private Carta[] cartas;
 
     public Columna(Baraja baraja, int i) {
         this.numeroCartas = i;
-        this.cartas = new Carta[i];
+        this.cartas = new Carta[NUMERO_MAXIMO_DE_CARTAS];
 
         for (int j = 0; j < i; j++) {
             this.cartas[j] = baraja.sacarCarta(); 
