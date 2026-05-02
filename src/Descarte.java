@@ -19,5 +19,8 @@ public class Descarte {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'voltear'");
     }
-
+    public void poner(Carta carta) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'poner'");
+    }
 }
