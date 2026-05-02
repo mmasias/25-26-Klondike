@@ -1,5 +1,3 @@
-package vistas.intervalo;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.regex.Pattern;
@@ -147,10 +145,5 @@ public class Console {
 
     private void writeError(String regExp) {
         System.out.println("Error de formato: se esperaba " + regExp);
-    }
-
-    public void cleanScreen() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'cleanScreen'");
     }
 }

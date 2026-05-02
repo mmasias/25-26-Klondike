@@ -1,22 +1,46 @@
 public class Columna {
 
+    private final int NUMERO_MAXIMO_DE_CARTAS = 52;
+    private int numeroCartas;
+    private Carta[] cartas;
+
     public Columna(Baraja baraja, int i) {
-        //TODO Auto-generated constructor stub
+        this.numeroCartas = i;
+        this.cartas = new Carta[NUMERO_MAXIMO_DE_CARTAS];
+
+        for (int j = 0; j < i; j++) {
+            this.cartas[j] = baraja.sacarCarta(); 
+        }
     }
 
     public void mostrar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
+        if (numeroCartas == 0) {
+            System.out.println("[vacía]");
+            return;
+        }
+        for (int j = 0; j < numeroCartas - 1; j++) {
+            System.out.println("[Carta boca abajo]");
+        }
+        cartas[numeroCartas - 1].mostrar();
     }
 
     public void moverA(Palo paloA) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'moverA'");
+        if (numeroCartas > 0) {
+            Carta cartaAMover = cartas[numeroCartas - 1];
+            paloA.poner(cartaAMover);
+            numeroCartas--;
+        }
     }
 
     public void moverA(Columna escogerColumna) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'moverA'");
+        if (numeroCartas > 0) {
+            Carta cartaAMover = cartas[numeroCartas - 1];
+            escogerColumna.poner(cartaAMover);
+            numeroCartas--;
+        }
     }
-
+    public void poner(Carta cartaAMover) {
+        this.cartas[numeroCartas] = cartaAMover;
+        this.numeroCartas++;
+    }
 }

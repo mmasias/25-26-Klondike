@@ -6,11 +6,11 @@ public class Baraja {
     private int ultima;
     private Console console;
 
-    public Baraja(){
+    public Baraja() {
         ultima = 0;
         cartas = new Carta[52];
-        for(int palo=0;palo<4;palo++){
-            for(int numero=0;numero<13;numero++){
+        for (int palo = 0; palo < 4; palo++) {
+            for (int numero = 0; numero < 13; numero++) {
                 this.poner(new Carta(palo, numero));
             }
         }
@@ -20,17 +20,17 @@ public class Baraja {
 
     private void mezclar() {
         Random aleatorio = new Random();
-        for(int i = 0; i<1000; i++){
+        for (int i = 0; i < 1000; i++) {
             int origen = aleatorio.nextInt(52);
             int destino = aleatorio.nextInt(52);
             Carta carta = cartas[origen];
             cartas[origen] = cartas[destino];
             cartas[destino] = carta;
-        }        
+        }
     }
 
-    private void poner(Carta carta) {
-        cartas[ultima]=carta;
+    public void poner(Carta carta) {
+        cartas[ultima] = carta;
         ultima++;
     }
 
@@ -40,14 +40,21 @@ public class Baraja {
         carta.mostrar();
     }
 
-
-
     private Carta cima() {
-        return cartas[ultima-1];
+        return cartas[ultima - 1];
     }
 
     public void moverA(Descarte descarte) {
-
+        Carta carta = this.cima();
+        descarte.poner(carta);
+        ultima--;
     }
 
+    public Carta sacarCarta() {
+    if (ultima == 0) {
+        return null;
+    }
+    ultima--;
+    return cartas[ultima];
+    }
 }
