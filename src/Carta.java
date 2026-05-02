@@ -16,11 +16,9 @@ public class Carta {
     }
 
     public void moverA(Palo paloA) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'moverA'");
+        paloA.poner(this);
     }
     public void moverA(Columna escogerColumna) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'moverA'");
+        escogerColumna.poner(this);
     }
 }
