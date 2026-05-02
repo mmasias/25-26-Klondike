@@ -21,7 +21,7 @@ public class Columna {
         for (int j = 0; j < numeroCartas - 1; j++) {
             System.out.println("[Carta boca abajo]");
         }
-        System.out.println(cartas[numeroCartas - 1]);
+        cartas[numeroCartas - 1].mostrar();
     }
 
     public void moverA(Palo paloA) {

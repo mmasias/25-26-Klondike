@@ -91,13 +91,18 @@ class Klondike {
     }
 
     private void mostrarTapete() {
-        console.cleanScreen();
+        for (int i = 0; i < 50; i++) {
+            console.writeln();
+        }
         baraja.mostrar();
+        console.writeln("DESCARTE: ");
         descarte.mostrar();
-        for (int i = 0; i <= NUMERO_PALOS; i++) {
+        console.writeln("PALOS: ");
+        for (int i = 0; i < NUMERO_PALOS; i++) {
             palos[i].mostrar();
         }
-        for (int i = 0; i <= NUMERO_COLUMNAS; i++) {
+        console.writeln("COLUMNAS: ");
+        for (int i = 0; i < NUMERO_COLUMNAS; i++) {
             columnas[i].mostrar();
         }
     }

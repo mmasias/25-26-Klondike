@@ -12,7 +12,7 @@ public class Palo {
             console.writeln("[vacía]");
         }
         for (int i = 0; i < numeroCartas; i++) {
-            console.writeln(cartas[i].toString());
+            cartas[i].mostrar();
         }
     }
 
