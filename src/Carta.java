@@ -1,12 +1,17 @@
 public class Carta {
 
+    private int palo;
+    private int numero;
+    private String[] palos = { "Corazones", "Diamantes", "Tréboles", "Picas" };
+    private String[] numeros = { "As", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+    Console console = new Console();
+
     public Carta(int palo, int numero) {
-        //TODO Auto-generated constructor stub
+        this.palo = palo;
+        this.numero = numero;
     }
 
     public void mostrar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
+        console.writeln(numeros[numero] + " de " + palos[palo]);
     }
-
 }
