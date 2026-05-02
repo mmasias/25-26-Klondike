@@ -29,7 +29,7 @@ public class Baraja {
         }
     }
 
-    private void poner(Carta carta) {
+    public void poner(Carta carta) {
         cartas[ultima] = carta;
         ultima++;
     }
@@ -45,12 +45,12 @@ public class Baraja {
     }
 
     public void moverA(Descarte descarte) {
-        if (this.barajaEstaVacia()){
+        if (this.barajaEstaVacia()) {
             console.writeln("La baraja esta vacia no puedes sacar mas cartas a -> descarte");
-        }else{
-            Carta carta=this.cima();
+        } else {
+            Carta carta = this.cima();
             carta.darVuelta();
-            ultima=ultima-1;
+            ultima = ultima - 1;
             descarte.añadir(carta);
         }
     }
