@@ -50,4 +50,8 @@ public class Baraja {
         ultima--;
     }
 
+    private void sacarCarta() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
 }

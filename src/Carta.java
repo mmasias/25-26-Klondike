@@ -14,4 +14,13 @@ public class Carta {
     public void mostrar() {
         console.writeln(numeros[numero] + " de " + palos[palo]);
     }
+
+    public void moverA(Palo paloA) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'moverA'");
+    }
+    public void moverA(Columna escogerColumna) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'moverA'");
+    }
 }
