@@ -4,7 +4,7 @@ public class Carta {
     private int numero;
     private String[] palos = { "Corazones", "Diamantes", "Tréboles", "Picas" };
     private String[] numeros = { "As", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
-    Console console = new Console();
+    private Console console = new Console();
 
     public Carta(int palo, int numero) {
         this.palo = palo;
