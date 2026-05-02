@@ -6,8 +6,9 @@ public class Columna {
     public Columna(Baraja baraja, int i) {
         this.numeroCartas = i;
         this.cartas = new Carta[i];
+
         for (int j = 0; j < i; j++) {
-            this.cartas[j] = baraja.sacarCarta();
+            this.cartas[j] = baraja.sacarCarta(); 
         }
     }
 
@@ -23,12 +24,22 @@ public class Columna {
     }
 
     public void moverA(Palo paloA) {
-        cartas[numeroCartas - 1].moverA(paloA);
-        numeroCartas--;
+        if (numeroCartas > 0) {
+            Carta cartaAMover = cartas[numeroCartas - 1];
+            paloA.poner(cartaAMover);
+            numeroCartas--;
+        }
     }
 
     public void moverA(Columna escogerColumna) {
-        cartas[numeroCartas - 1].moverA(escogerColumna);
-        numeroCartas--;
+        if (numeroCartas > 0) {
+            Carta cartaAMover = cartas[numeroCartas - 1];
+            escogerColumna.poner(cartaAMover);
+            numeroCartas--;
+        }
+    }
+    private void poner(Carta cartaAMover) {
+        this.cartas[numeroCartas] = cartaAMover;
+        this.numeroCartas++;
     }
 }
