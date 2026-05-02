@@ -39,7 +39,7 @@ public class Columna {
             numeroCartas--;
         }
     }
-    private void poner(Carta cartaAMover) {
+    public void poner(Carta cartaAMover) {
         this.cartas[numeroCartas] = cartaAMover;
         this.numeroCartas++;
     }
