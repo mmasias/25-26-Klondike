@@ -59,4 +59,10 @@ public class Baraja {
         return ultima == 0;
     }
 
+    public Carta sacarCarta() {
+        Carta cartaExtraida = this.cartas[ultima - 1];
+        ultima--;
+        return cartaExtraida;
+    }
+
 }
