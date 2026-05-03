@@ -149,8 +149,5 @@ public class Console {
         System.out.println("Error de formato: se esperaba " + regExp);
     }
 
-    public void cleanScreen() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'cleanScreen'");
-    }
+   
 }

@@ -14,11 +14,11 @@ public class Carta {
 
     public void mostrar() {
         if (!estaBocaArriba) {
-            console.writeln("[?]");
+            console.writeln("[?] ");
         } else {
             String[] nombresPalos = { "corazones", "diamantes", "picas", "treboles" };
             String[] numero = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
-            console.writeln("[" + numero[this.numero] + "]" + "[" + nombresPalos[this.palo] + "]");
+            console.write("[" + numero[this.numero] + "]" + "[" + nombresPalos[this.palo] + "]");
         }
     }
 

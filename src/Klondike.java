@@ -5,8 +5,7 @@ class Klondike {
     private Columna[] columnas;
     private Descarte descarte;
     private Console console;
-    private String[] nombresPalos = {"Picas", "Diamantes", "Tréboles", "Corazones"};
- 
+    private String[] nombresPalos = { "Picas", "Diamantes", "Tréboles", "Corazones" };
 
     private final int NUMERO_COLUMNAS = 7;
     private final int NUMERO_PALOS = 4;
@@ -76,8 +75,8 @@ class Klondike {
     }
 
     private boolean validarFinal() {
-        for (int i = 0; i <= NUMERO_PALOS; i++) {
-            if(!palos[i].completo()){
+        for (int i = 0; i < NUMERO_PALOS; i++) {
+            if (!palos[i].completo()) {
                 return false;
             }
         }
@@ -93,15 +92,24 @@ class Klondike {
     }
 
     private void mostrarTapete() {
-        console.cleanScreen();
+        console.writeln("");
         baraja.mostrar();
+        console.writeln("");
         descarte.mostrar();
-        for (int i = 0; i <= NUMERO_PALOS; i++) {
+        console.writeln("");
+        console.writeln("Palos:");
+        for (int i = 0; i < NUMERO_PALOS; i++) {
             palos[i].mostrar();
+            console.writeln("");
+          
         }
-        for (int i = 0; i <= NUMERO_COLUMNAS; i++) {
+        console.writeln("");
+        console.writeln("Columnas:");
+        for (int i = 0; i < NUMERO_COLUMNAS; i++) {
             columnas[i].mostrar();
+            console.writeln("");
         }
+        console.writeln("");
     }
 
     public static void main(String[] args) {

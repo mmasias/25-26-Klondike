@@ -13,6 +13,10 @@ public class Columna {
             cartas[cantidadCartas] = baraja.sacarCarta();
             cantidadCartas++;
         }
+        if (this.cantidadCartas > 0) {
+            this.cartas[this.cantidadCartas - 1].darVuelta();
+        }
+        cartaVisible = cantidadCartas - 1;
         cartaVisible = cantidadCartas - 1;
     }
 
@@ -35,6 +39,7 @@ public class Columna {
                 cantidadCartas--;
                 if (this.cartaVisible == this.cantidadCartas && !this.estaVacio()) {
                     cartaVisible--;
+                    this.cartas[this.cartaVisible].darVuelta();
                 }
             }
         }
@@ -49,6 +54,7 @@ public class Columna {
                 this.cantidadCartas--;
                 if (this.cartaVisible == this.cantidadCartas && !this.estaVacio()) {
                     this.cartaVisible--;
+                    this.cartas[this.cartaVisible].darVuelta();
                 }
             }
         }
