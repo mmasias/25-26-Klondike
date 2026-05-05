@@ -75,7 +75,7 @@ class Klondike {
 
     private boolean validarFinal() {
         for (int i = 0; i <= NUMERO_PALOS; i++) {
-            if(!palos[i].completo()){
+            if (!palos[i].completo()) {
                 return false;
             }
         }

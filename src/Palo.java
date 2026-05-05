@@ -7,6 +7,7 @@ public class Palo {
         this.cartas = new Carta[13];
         this.numeroCartas = 0;
     }
+
     public void mostrar() {
         if (numeroCartas == 0) {
             console.writeln("[vacía]");

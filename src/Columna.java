@@ -9,7 +9,7 @@ public class Columna {
         this.cartas = new Carta[NUMERO_MAXIMO_DE_CARTAS];
 
         for (int j = 0; j < i; j++) {
-            this.cartas[j] = baraja.sacarCarta(); 
+            this.cartas[j] = baraja.sacarCarta();
         }
     }
 
@@ -39,6 +39,7 @@ public class Columna {
             numeroCartas--;
         }
     }
+
     public void poner(Carta cartaAMover) {
         this.cartas[numeroCartas] = cartaAMover;
         this.numeroCartas++;

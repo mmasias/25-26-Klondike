@@ -51,10 +51,10 @@ public class Baraja {
     }
 
     public Carta sacarCarta() {
-    if (ultima == 0) {
-        return null;
-    }
-    ultima--;
-    return cartas[ultima];
+        if (ultima == 0) {
+            return null;
+        }
+        ultima--;
+        return cartas[ultima];
     }
 }

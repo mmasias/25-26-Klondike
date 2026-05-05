@@ -18,6 +18,7 @@ public class Carta {
     public void moverA(Palo paloA) {
         paloA.poner(this);
     }
+
     public void moverA(Columna escogerColumna) {
         escogerColumna.poner(this);
     }

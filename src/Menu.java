@@ -2,7 +2,7 @@ public class Menu {
 
     private Console console;
 
-    public Menu(){
+    public Menu() {
         console = new Console();
     }
 
