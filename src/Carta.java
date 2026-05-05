@@ -31,22 +31,27 @@ public class Carta {
     }
 
     public boolean esRey() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'esRey'");
+        return numero == 12;
     }
 
     public boolean bocaArriba() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'bocaArriba'");
+        return bocaArriba;
     }
 
     public boolean siguiente(Carta carta) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'siguiente'");
+        return this.numero == carta.numero + 1;
     }
 
     public boolean distintoColor(Carta carta) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'distintoColor'");
+        return this.rojo() && carta.negro() || this.negro() && carta.rojo();
     }
+
+    private boolean negro() {
+        return this.palo==0 || this.palo==1;
+    }
+
+    private boolean rojo() {
+        return !this.negro();
+    }    
+
 }

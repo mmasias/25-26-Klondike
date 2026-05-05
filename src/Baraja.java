@@ -40,8 +40,6 @@ public class Baraja {
         carta.mostrar();
     }
 
-
-
     private Carta cima() {
         return cartas[ultima-1];
     }
