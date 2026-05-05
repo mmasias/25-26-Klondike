@@ -23,9 +23,9 @@ public class Columna {
         }
         return null;
     }
-    
+
     public void mostrar() {
-       System.out.println(carta.[ultima]);
+       System.out.println("numero de columna " + i + "carta: " + cartas[ultima]);
     }
 
     public void moverA(Palo paloA) {
