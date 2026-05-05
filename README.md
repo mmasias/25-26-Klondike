@@ -1,2 +1,4 @@
 # 25-26-Klondike
-Un klondike...
+
+
+Primera versión funcional, sin errores (detectados)
