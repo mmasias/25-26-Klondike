@@ -60,7 +60,7 @@ public class Baraja {
         }
     }
 
-    private Carta sacar() {
+    Carta sacar() {
         assert !vacia();
         ultima--;
         return cartas[ultima];
