@@ -1,22 +1,39 @@
 public class Columna {
+    private Carta[] cartas;
+    private int ultima;
+    Baraja baraja;
+    int i;
 
     public Columna(Baraja baraja, int i) {
-        //TODO Auto-generated constructor stub
+        this.baraja = baraja;
+        this.i = i;
+        this.cartas = new Carta[52];
+        this.ultima = 0;
     }
 
+    public void poner(Carta carta) {
+        cartas[ultima] = carta;
+        ultima++;
+    }
+
+    public Carta sacar() {
+        if(ultima > 0) {
+            ultima--;
+            return cartas[ultima];
+        }
+        return null;
+    }
+    
     public void mostrar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
+       System.out.println(carta.[ultima]);
     }
 
     public void moverA(Palo paloA) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'moverA'");
+        this.cartas[ultima] = paloA.cartas[ultima];
     }
 
     public void moverA(Columna escogerColumna) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'moverA'");
+        this.cartas[ultima] = escogerColumna.cartas[ultima];
     }
 
 }

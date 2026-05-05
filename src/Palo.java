@@ -1,5 +1,5 @@
 public class Palo {
-
+    Carta [] cartas;
     public void mostrar() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
