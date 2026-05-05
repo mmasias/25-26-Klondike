@@ -29,4 +29,9 @@ public class Carta {
     public void voltear() {
         bocaArriba = !bocaArriba;
     }
+
+    public boolean esRey() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'esRey'");
+    }
 }
