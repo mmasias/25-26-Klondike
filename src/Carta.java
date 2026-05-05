@@ -9,4 +9,9 @@ public class Carta {
         throw new UnsupportedOperationException("Unimplemented method 'mostrar'");
     }
 
+    public void voltear() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'voltear'");
+    }
+
 }
