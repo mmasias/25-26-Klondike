@@ -19,7 +19,7 @@ public class Columna {
         console = new Console();
     }
 
-    private void poner(Carta carta) {
+    public void poner(Carta carta) {
         cartas[ultima] = carta;
         ultima++;
     }
@@ -73,7 +73,7 @@ public class Columna {
         }
     }
 
-    private boolean apilable(Carta carta) {
+    public boolean apilable(Carta carta) {
         return this.vacia() && carta.esRey() ||
                 !this.vacia()
                         && this.cima().bocaArriba()
