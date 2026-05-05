@@ -1,5 +1,3 @@
-package vistas.intervalo;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.regex.Pattern;
@@ -150,7 +148,14 @@ public class Console {
     }
 
     public void cleanScreen() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'cleanScreen'");
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
+
+    public void pause(int seconds) {
+        try {
+            Thread.sleep(1000 * seconds);
+        } catch (InterruptedException e) {
+        }
+    }    
 }
