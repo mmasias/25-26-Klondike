@@ -36,4 +36,6 @@ public class Columna {
         this.cartas[ultima] = escogerColumna.cartas[ultima];
     }
 
+    public void darVuelta
+
 }
