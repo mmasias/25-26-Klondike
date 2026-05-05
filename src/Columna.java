@@ -34,11 +34,17 @@ public class Columna {
     }
 
     public void moverA(Palo paloA) {
-        this.cartas[ultima] = paloA.cartas[ultima];
+        Carta carta = carta.sacar();
+        if (carta != null) {
+            paloA.sacar(carta);
+        }
     }
 
     public void moverA(Columna escogerColumna) {
-        this.cartas[ultima] = escogerColumna.cartas[ultima];
+        Carta carta = carta.poner();
+        if (carta != null) {
+            escogerColumna.poner(carta);
+        }
     }
 
     
