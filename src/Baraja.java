@@ -61,12 +61,12 @@ public class Baraja {
     }
 
     private Carta sacar() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'sacar'");
+        assert !vacia();
+        ultima--;
+        return cartas[ultima];
     }
 
     private boolean vacia() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'vacia'");
+        return ultima == 0;
     }
 }
