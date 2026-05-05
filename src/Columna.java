@@ -34,16 +34,16 @@ public class Columna {
     }
 
     public void moverA(Palo paloA) {
-        Carta carta = carta.sacar();
-        if (carta != null) {
-            paloA.sacar(carta);
+        Carta cartas = cartas.sacar();
+        if (cartas != null) {
+            paloA.sacar(cartas);
         }
     }
 
     public void moverA(Columna escogerColumna) {
-        Carta carta = carta.poner();
-        if (carta != null) {
-            escogerColumna.poner(carta);
+        Carta cartas = cartas.sacar();
+        if (cartas != null) {
+            escogerColumna.poner(cartas);
         }
     }
 
