@@ -83,8 +83,7 @@ public class Columna {
     }
 
     private Carta cima() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'cima'");
+        return cartas[ultima - 1];
     }
 
 }
