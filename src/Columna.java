@@ -86,4 +86,13 @@ public class Columna {
         return cartas[ultima - 1];
     }
 
+    public void voltear() {
+        if (this.vacia()) {
+            console.writeln("No hay carta para voltear");
+        } else if (cima().bocaArriba()) {
+            console.writeln("No hay carta boca abajo en la cima");
+        } else {
+            cima().voltear();
+        }
+    }
 }

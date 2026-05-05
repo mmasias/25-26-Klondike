@@ -14,7 +14,8 @@ public class Menu {
         console.writeln("5. Mover de Columna a Palo");
         console.writeln("6. Mover de Columna a Columna");
         console.writeln("7. Voltear Descarte en Baraja");
-        console.writeln("8. Salir");
+        console.writeln("8. Voltear carta de Columna");
+        console.writeln("9. Salir");
     }
 
     public int pedirOpcion() {

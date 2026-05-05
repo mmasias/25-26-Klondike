@@ -23,7 +23,7 @@ public class Carta {
             numero = NUMEROS[this.numero];
             palo = PALOS[this.palo];
         }
-        console.write("[" + numero + " " + palo + "]");
+        console.write("[" + numero + " " + palo + " ]");
     }
 
     public void voltear() {
@@ -55,13 +55,11 @@ public class Carta {
     }
 
     public boolean esAs() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'esAs'");
+        return numero==0;
     }
 
-    public boolean igualPalo(Carta cima) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'igualPalo'");
+    public boolean igualPalo(Carta carta) {
+        return this.palo == carta.palo;
     }    
 
 }

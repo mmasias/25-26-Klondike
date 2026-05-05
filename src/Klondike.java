@@ -40,11 +40,12 @@ class Klondike {
                 case 5 -> this.escogerColumna("De").moverA(this.escogerPalo("A"));
                 case 6 -> this.escogerColumna("De").moverA(this.escogerColumna("A"));
                 case 7 -> descarte.voltear(baraja);
-                case 8 -> estaJugando = false;
+                case 8 -> this.escogerColumna("De").voltear();
+                case 9 -> estaJugando = false;
             }
             haGanado = this.validarFinal();
-        } while (estaJugando || !haGanado);
-        console.writeln(!haGanado ? "NO " : "" + "Ganaste crack!");
+        } while (estaJugando && !haGanado);
+        console.writeln((!haGanado ? "NO " : "") + "GANASTE");
     }
 
     private boolean validarFinal() {
@@ -67,13 +68,21 @@ class Klondike {
     private void mostrarTapete() {
         console.cleanScreen();
         baraja.mostrar();
+        this.linea();
         descarte.mostrar();
-        for (int i = 0; i <= NUMERO_PALOS; i++) {
+        this.linea();
+        for (int i = 0; i < NUMERO_PALOS; i++) {
             palos[i].mostrar();
         }
-        for (int i = 0; i <= NUMERO_COLUMNAS; i++) {
+        this.linea();
+        for (int i = 0; i < NUMERO_COLUMNAS; i++) {
             columnas[i].mostrar();
         }
+        this.linea();
+    }
+
+    private void linea() {
+        console.writeln("-".repeat(30));
     }
 
     public static void main(String[] args) {

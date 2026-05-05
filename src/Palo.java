@@ -49,7 +49,7 @@ public class Palo {
     }
 
     public boolean completo() {
-        return this.cima().esRey();
+        return ultima==13;
     }
 
     public boolean apilable(Carta carta) {

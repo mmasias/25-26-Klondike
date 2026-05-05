@@ -35,9 +35,14 @@ public class Baraja {
     }
 
     public void mostrar() {
-        console.writeln("BARAJA ");
-        Carta carta = this.cima();
-        carta.mostrar();
+        console.write("BARAJA: ");
+        if (vacia()) {
+            console.writeln("La baraja está vacía!!!");
+        } else {
+            Carta carta = cima();
+            carta.mostrar();
+            console.writeln();
+        }
     }
 
     private Carta cima() {
