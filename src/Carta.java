@@ -12,7 +12,7 @@ public class Carta {
     }
 
     public void mostrar() {
-        console.writeln(numeros[numero] + " de " + palos[palo]);
+        console.writeln(" "+ numeros[numero] + " de " + palos[palo]);
     }
 
     public void moverA(Palo paloA) {

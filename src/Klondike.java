@@ -65,12 +65,10 @@ class Klondike {
                 case 8:
                     estaJugando = false;
                     break;
-                default:
-                    break;
             }
             haGanado = this.validarFinal();
-        } while (estaJugando || !haGanado);
-        console.writeln(!haGanado ? "NO " : "" + "Ganaste crack!");
+        } while (estaJugando && !haGanado);
+        console.writeln(!haGanado ? "No ganaste" : "Ganaste crack!");
     }
 
     private boolean validarFinal() {

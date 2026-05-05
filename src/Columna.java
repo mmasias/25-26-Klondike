@@ -15,11 +15,11 @@ public class Columna {
 
     public void mostrar() {
         if (numeroCartas == 0) {
-            System.out.println("[vacía]");
+            System.out.print("[vacía]");
             return;
         }
         for (int j = 0; j < numeroCartas - 1; j++) {
-            System.out.println("[Carta boca abajo]");
+            System.out.print(" [Carta boca abajo]");
         }
         cartas[numeroCartas - 1].mostrar();
     }
