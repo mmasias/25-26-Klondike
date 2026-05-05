@@ -32,41 +32,15 @@ class Klondike {
         do {
             this.mostrarTapete();
             menu.mostrar();
-            int opcion = menu.pedirOpcion();
-
-            switch (opcion) {
-                case 1:
-                    baraja.moverA(descarte);
-                    break;
-                case 2:
-                    Palo paloDestino = this.escogerPalo("A");
-                    descarte.moverA(paloDestino);
-                    break;
-                case 3:
-                    Columna columnaDestino = this.escogerColumna("A");
-                    descarte.moverA(columnaDestino);
-                    break;
-                case 4:
-                    Palo paloDe = this.escogerPalo("De");
-                    Columna columnaA = this.escogerColumna("A");
-                    paloDe.moverA(columnaA);
-                    break;
-                case 5:
-                    Columna columnaDe = this.escogerColumna("De");
-                    Palo paloA = this.escogerPalo("A");
-                    columnaDe.moverA(paloA);
-                    break;
-                case 6:
-                    this.escogerColumna("De").moverA(this.escogerColumna("A"));
-                    break;
-                case 7:
-                    descarte.voltear(baraja);
-                    break;
-                case 8:
-                    estaJugando = false;
-                    break;
-                default:
-                    break;
+            switch (menu.pedirOpcion()) {
+                case 1 -> baraja.moverA(descarte);
+                case 2 -> descarte.moverA(this.escogerPalo("A"));
+                case 3 -> descarte.moverA(this.escogerColumna("A"));
+                case 4 -> this.escogerPalo("De").moverA(this.escogerColumna("A"));
+                case 5 -> this.escogerColumna("De").moverA(this.escogerPalo("A"));
+                case 6 -> this.escogerColumna("De").moverA(this.escogerColumna("A"));
+                case 7 -> descarte.voltear(baraja);
+                case 8 -> estaJugando = false;
             }
             haGanado = this.validarFinal();
         } while (estaJugando || !haGanado);
@@ -75,7 +49,7 @@ class Klondike {
 
     private boolean validarFinal() {
         for (int i = 0; i <= NUMERO_PALOS; i++) {
-            if(!palos[i].completo()){
+            if (!palos[i].completo()) {
                 return false;
             }
         }
