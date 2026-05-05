@@ -25,7 +25,12 @@ public class Columna {
     }
 
     public void mostrar() {
-       System.out.println("numero de columna " + i + "carta: " + cartas[ultima]);
+        System.out.print("Columna " + i + ": ");
+        for(int j = 0; j < ultima; j++) {
+            cartas[j].mostrar();
+            System.out.print(" | ");
+        }
+        System.out.println();
     }
 
     public void moverA(Palo paloA) {
@@ -36,6 +41,6 @@ public class Columna {
         this.cartas[ultima] = escogerColumna.cartas[ultima];
     }
 
-    public void darVuelta
+    
 
 }
