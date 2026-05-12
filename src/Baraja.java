@@ -1,10 +1,6 @@
 import java.util.Random;
-
-public class Baraja {
-
-    private Carta[] cartas;
-    private int ultima;
-    private Console console;
+ 
+public class Baraja extends Mazo{
 
     public Baraja(){
         ultima = 0;
@@ -29,24 +25,13 @@ public class Baraja {
         }        
     }
 
-    public void poner(Carta carta) {
-        cartas[ultima]=carta;
-        ultima++;
-    }
 
-    public void mostrar() {
-        console.write("BARAJA: ");
-        if (vacia()) {
-            console.writeln("La baraja está vacía!!!");
-        } else {
-            Carta carta = cima();
-            carta.mostrar();
-            console.writeln();
-        }
-    }
 
-    private Carta cima() {
-        return cartas[ultima-1];
+    protected void mostrarContenido(){
+        console.write("Baraja");
+        Carta carta = cima();
+        carta.mostrar();
+        console.writeln();        
     }
 
     public void moverA(Descarte descarte) {
@@ -61,15 +46,5 @@ public class Baraja {
                 contador--;
             }
         }
-    }
-
-    public Carta sacar() {
-        assert !vacia();
-        ultima--;
-        return cartas[ultima];
-    }
-
-    public boolean vacia() {
-        return ultima == 0;
     }
 }

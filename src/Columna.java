@@ -1,9 +1,6 @@
-public class Columna {
-
-    private Carta[] cartas;
-    private int ultima;
+public class Columna extends Mazo{
+ 
     private int posicion;
-    private Console console;
 
     public Columna(Baraja baraja, int posicion) {
         this.posicion = posicion;
@@ -19,25 +16,14 @@ public class Columna {
         console = new Console();
     }
 
-    public void poner(Carta carta) {
-        cartas[ultima] = carta;
-        ultima++;
-    }
 
-    public void mostrar() {
-        console.write("Columna [" + posicion + "]: ");
-        if (this.vacia()) {
-            console.write("NADA");
-        } else {
-            for (int i = 0; i < ultima; i++) {
-                cartas[i].mostrar();
-            }
-        }
+
+    protected void mostrarContenido(){
+        console.write("Columna "+posicion);
+        for (int i = 0; i < ultima; i++) {
+            cartas[i].mostrar();
+        }        
         console.writeln();
-    }
-
-    private boolean vacia() {
-        return ultima == 0;
     }
 
     public void moverA(Palo palo) {
@@ -52,11 +38,6 @@ public class Columna {
                 console.writeln("No se puede!");
             }
         }
-    }
-
-    private Carta sacar() {
-        ultima--;
-        return cartas[ultima];
     }
 
     public void moverA(Columna columna) {
@@ -80,10 +61,6 @@ public class Columna {
                         && this.cima().siguiente(carta)
                         && this.cima().distintoColor(carta);
 
-    }
-
-    private Carta cima() {
-        return cartas[ultima - 1];
     }
 
     public void voltear() {

@@ -1,8 +1,4 @@
-public class Palo {
-
-    private Carta[] cartas;
-    private int ultima;
-    private Console console;
+public class Palo extends Mazo{
 
     public Palo() {
         ultima = 0;
@@ -10,23 +6,13 @@ public class Palo {
         console = new Console();
     }
 
-    public void mostrar() {
-        console.write("Palo: ");
-        if (this.vacia()) {
-            console.writeln("No hay cartas en el palo");
-        } else {
-            Carta carta = this.cima();
-            carta.mostrar();
-            console.writeln();
-        }
-    }
 
-    private Carta cima() {
-        return cartas[ultima - 1];
-    }
 
-    private boolean vacia() {
-        return ultima == 0;
+    protected void mostrarContenido(){
+        console.write("Palo");
+        Carta carta = this.cima();
+        carta.mostrar();
+        console.writeln();        
     }
 
     public void moverA(Columna columna) {
@@ -43,11 +29,6 @@ public class Palo {
         }
     }
 
-    private Carta sacar() {
-        ultima--;
-        return cartas[ultima];
-    }
-
     public boolean completo() {
         return ultima==13;
     }
@@ -59,8 +40,4 @@ public class Palo {
                     && carta.siguiente(this.cima());
     }
 
-    public void poner(Carta carta) {
-        cartas[ultima] = carta;
-        ultima++;
-    }
 }

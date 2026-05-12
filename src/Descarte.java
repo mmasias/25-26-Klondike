@@ -1,8 +1,4 @@
-public class Descarte {
-
-    private Carta[] cartas;
-    private int ultima;
-    private Console console;
+public class Descarte extends Mazo {
 
     public Descarte() {
         ultima = 0;
@@ -10,24 +6,18 @@ public class Descarte {
         console = new Console();
     }
 
-    public void mostrar() {
-        console.write("Descarte: ");
-        if (this.vacia()) {
-            console.writeln("No hay cartas en el Descarte");
-        } else {
-            int primeraVisible = ultima - 3;
-            if (primeraVisible < 0) {
-                primeraVisible = 0;
-            }
-            for (int i = primeraVisible; i < ultima; i++) {
-                cartas[i].mostrar();
-            }
-            console.writeln();
-        }
-    }
 
-    private boolean vacia() {
-        return ultima == 0;
+
+    protected void mostrarContenido() {
+        console.write("Descarte");
+        int primeraVisible = ultima - 3;
+        if (primeraVisible < 0) {
+            primeraVisible = 0;
+        }
+        for (int i = primeraVisible; i < ultima; i++) {
+            cartas[i].mostrar();
+        }
+        console.writeln();
     }
 
     public void moverA(Palo palo) {
@@ -42,11 +32,6 @@ public class Descarte {
                 console.writeln("Jugada inválida.");
             }
         }
-    }
-
-    private Carta sacar() {
-        ultima--;
-        return cartas[ultima];
     }
 
     public void moverA(Columna columna) {
@@ -75,8 +60,4 @@ public class Descarte {
         }
     }
 
-    public void poner(Carta carta) {
-        cartas[ultima] = carta;
-        ultima++;        
-    }
 }

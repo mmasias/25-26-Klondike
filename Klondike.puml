@@ -1,0 +1,107 @@
+@startuml
+
+class Mazo {
+    #cartas : Carta[]
+    #ultima : int
+    #console : Console
+    +poner(Carta)
+    +vacia():boolean
+    +cima():Carta
+    #sacar():Carta
+}
+
+class Baraja {
+    +Baraja()
+    +mostrar()
+    +moverA(Descarte)
+    -mezclar()    
+}
+
+class Columna{
+    -posicion: int
+    +Columna(Baraja,posicion:int)
+    +mostrar()
+    +moverA(Palo)
+    +moverA(Columna)
+    +apilable(Carta):boolean
+    +voltear()
+}
+
+class Descarte{
+    +Descarte()
+    +mostrar()
+    +moverA(Palo)
+    +moverA(Columna)
+    +voltear(Baraja)
+}
+
+class Palo{
+    +Palo()
+    +mostrar()
+    +moverA(Columna)
+    +completo():boolean
+    +apilable(Carta):boolean
+}
+
+class Carta{
+    -palo: int
+    -numero: int
+    -bocaArriba: boolean
+    -PALOS: {final} String[]
+    -NUMEROS: {final} String[]
+    -console: Console
+    +Carta(int palo, int numero)
+    +mostrar()
+    +voltear()
+    +esRey():boolean
+    +esAs():boolean
+    +estaBocaArriba():boolean
+    +esSiguiente(Carta):boolean
+    +esDistintoColor(Carta):boolean
+    +esIgualPalo(Carta):boolean
+    +getNumero():int
+    -esNegro():boolean
+    -esRojo():boolean
+}
+
+class Menu{
+    -console: Console
+    +Menu()
+    +mostrar()
+    +pedirOpcion():int
+}
+
+class Klondike{
+    -baraja: Baraja
+    -palos: Palo[]
+    -columnas: Columna[]
+    -descarte: Descarte
+    -console: Console
+    +Klondike()
+    -jugar()
+    -validarFinal():boolean
+    -escogerColumna(String):Columna
+    -escogerPalo(String):Palo
+    -mostrarTapete()
+    -linea()
+}
+
+Klondike --> Baraja
+Klondike --> Palo
+Klondike --> Columna
+Klondike --> Descarte
+Klondike ..> Menu
+Klondike ..> Console
+
+Baraja --> Carta
+Columna --> Carta
+Descarte --> Carta
+Palo --> Carta
+
+Mazo <|-- Baraja
+Mazo <|-- Columna
+Mazo <|-- Descarte
+Mazo <|-- Palo
+
+
+@enduml

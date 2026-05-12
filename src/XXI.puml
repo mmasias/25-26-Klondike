@@ -1,0 +1,35 @@
+@startuml
+
+class Mano {
+    - cartas : Carta[]
+    - ultima : int
+    - Console console
+    - PUNTAJE_GANADOR = 21 : int
+    - MAXIMO_CARTAS = 11 : int
+
+    + Mano()
+    + mostrar()
+    + haGanado() : boolean
+    + haPerdido() : boolean
+    - obtenerPuntaje() : int
+    + puedeJugar() : boolean
+    - poner(Carta carta)
+    + recibir(carta : Carta)
+}
+
+class Dealer {
+    - baraja : Baraja
+    - mano : Mano
+    - console : Console
+    + Dealer()
+    + jugar()
+    + pedir()
+    + reiniciar()
+    + mostrarMenu()
+}
+
+Dealer -> Mano
+Mano -> Baraja
+Baraja -> Carta
+
+@enduml

@@ -43,14 +43,14 @@ public class Carta {
     }
 
     public boolean distintoColor(Carta carta) {
-        return this.rojo() && carta.negro() || this.negro() && carta.rojo();
+        return this.esRojo() && carta.negro() || this.negro() && carta.esRojo();
     }
 
     private boolean negro() {
         return this.palo==0 || this.palo==1;
     }
 
-    private boolean rojo() {
+    private boolean esRojo() {
         return !this.negro();
     }
 
@@ -60,6 +60,10 @@ public class Carta {
 
     public boolean igualPalo(Carta carta) {
         return this.palo == carta.palo;
+    }
+
+    public int getNumero() {
+        return numero;
     }    
 
 }
