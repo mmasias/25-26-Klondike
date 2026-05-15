@@ -1,37 +1,37 @@
 import java.util.Random;
- 
-public class Baraja extends Mazo{
 
-    public Baraja(){
-        ultima = 0;
-        cartas = new Carta[52];
-        for(int palo=0;palo<4;palo++){
-            for(int numero=0;numero<13;numero++){
+public class Baraja extends Mazo {
+
+    private static final int PALOS = 4;
+    private static final int NUMEROS = 13;
+    private static final int NUMERO_CARTAS = PALOS * NUMEROS;
+    private static final String TITULO = "Baraja";
+
+    public Baraja() {
+        super(NUMERO_CARTAS, TITULO);
+        for (int palo = 0; palo < PALOS; palo++) {
+            for (int numero = 0; numero < NUMEROS; numero++) {
                 this.poner(new Carta(palo, numero));
             }
         }
         this.mezclar();
-        console = new Console();
     }
 
     private void mezclar() {
         Random aleatorio = new Random();
-        for(int i = 0; i<1000; i++){
+        for (int i = 0; i < 1000; i++) {
             int origen = aleatorio.nextInt(52);
             int destino = aleatorio.nextInt(52);
             Carta carta = cartas[origen];
             cartas[origen] = cartas[destino];
             cartas[destino] = carta;
-        }        
+        }
     }
 
-
-
-    protected void mostrarContenido(){
-        console.write("Baraja");
+    protected void mostrarContenido() {
         Carta carta = cima();
         carta.mostrar();
-        console.writeln();        
+        console.writeln();
     }
 
     public void moverA(Descarte descarte) {

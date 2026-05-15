@@ -1,15 +1,15 @@
 public class Descarte extends Mazo {
 
+    private static final int NUMERO_CARTAS = 24;
+    private static final String TITULO = "Descarte";
+
     public Descarte() {
-        ultima = 0;
-        cartas = new Carta[52 - 28];
-        console = new Console();
+        super(NUMERO_CARTAS, TITULO);
     }
 
 
 
     protected void mostrarContenido() {
-        console.write("Descarte");
         int primeraVisible = ultima - 3;
         if (primeraVisible < 0) {
             primeraVisible = 0;

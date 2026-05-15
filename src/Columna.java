@@ -1,11 +1,13 @@
 public class Columna extends Mazo{
  
+    private static final int NUMERO_CARTAS = 24;
+    private static final String TITULO = "Columna";
     private int posicion;
 
+
     public Columna(Baraja baraja, int posicion) {
+        super(NUMERO_CARTAS, TITULO);
         this.posicion = posicion;
-        ultima = 0;
-        cartas = new Carta[19];
         for (int i = 0; i < posicion; i++) {
             Carta carta = baraja.sacar();
             if (i == posicion - 1) {
@@ -13,13 +15,10 @@ public class Columna extends Mazo{
             }
             this.poner(carta);
         }
-        console = new Console();
     }
 
-
-
     protected void mostrarContenido(){
-        console.write("Columna "+posicion);
+        console.write(posicion + " ");
         for (int i = 0; i < ultima; i++) {
             cartas[i].mostrar();
         }        

@@ -1,15 +1,13 @@
 public class Palo extends Mazo{
 
+    private static final int NUMERO_CARTAS = 13;
+    private static final String TITULO = "Palo";
+
     public Palo() {
-        ultima = 0;
-        cartas = new Carta[13];
-        console = new Console();
+        super(NUMERO_CARTAS, TITULO);
     }
 
-
-
     protected void mostrarContenido(){
-        console.write("Palo");
         Carta carta = this.cima();
         carta.mostrar();
         console.writeln();        
